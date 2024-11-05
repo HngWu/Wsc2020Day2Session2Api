@@ -1,0 +1,6 @@
+@Wsc2020Day2Session2Api_HostAddress = http://localhost:5011
+
+GET {{Wsc2020Day2Session2Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

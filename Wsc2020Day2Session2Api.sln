@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wsc2020Day2Session2Api", "Wsc2020Day2Session2Api\Wsc2020Day2Session2Api.csproj", "{212D7C2C-290D-46D8-9713-95533E1C5950}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{212D7C2C-290D-46D8-9713-95533E1C5950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212D7C2C-290D-46D8-9713-95533E1C5950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212D7C2C-290D-46D8-9713-95533E1C5950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212D7C2C-290D-46D8-9713-95533E1C5950}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADC11AF8-7A7F-4856-8D3D-1AD3A629C066}
+	EndGlobalSection
+EndGlobal

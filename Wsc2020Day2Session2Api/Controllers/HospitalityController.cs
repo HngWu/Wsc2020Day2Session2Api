@@ -37,15 +37,16 @@ namespace Wsc2020Day2Session2Api.Controllers
 
             try
             {
-                var newCompetitor = new Competitor
+                var newCompetitor = new User
                 {
                     Id = competitor.Id,
+                    UserTypeId = 1,
                     FullName = competitor.FullName,
                     Email = competitor.Email,
                     Password = competitor.Password,
                 };
 
-                context.Competitors.Add(newCompetitor);
+                context.Users.Add(newCompetitor);
                 context.SaveChanges();
 
                 return Ok();
@@ -110,7 +111,7 @@ namespace Wsc2020Day2Session2Api.Controllers
 
             try
             {
-                var competitor = context.Competitors.Where(x => x.Id == competitorId).FirstOrDefault();
+                var competitor = context.Users.Where(x => x.Id == competitorId).FirstOrDefault();
 
                 if (competitor != null)
                 {

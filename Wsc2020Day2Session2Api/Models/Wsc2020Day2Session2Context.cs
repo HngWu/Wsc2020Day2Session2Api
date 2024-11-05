@@ -19,7 +19,9 @@ public partial class Wsc2020Day2Session2Context : DbContext
 
     public virtual DbSet<CheckIn> CheckIns { get; set; }
 
-    public virtual DbSet<Competitor> Competitors { get; set; }
+    public virtual DbSet<User> Users { get; set; }
+
+    public virtual DbSet<UserType> UserTypes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -56,9 +58,9 @@ public partial class Wsc2020Day2Session2Context : DbContext
                 .HasConstraintName("FK_CheckIn_CheckIn");
         });
 
-        modelBuilder.Entity<Competitor>(entity =>
+        modelBuilder.Entity<User>(entity =>
         {
-            entity.ToTable("Competitor");
+            entity.HasKey(e => e.Id).HasName("PK_Competitor");
 
             entity.Property(e => e.Id)
                 .HasMaxLength(100)
@@ -72,6 +74,22 @@ public partial class Wsc2020Day2Session2Context : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(50)
                 .HasColumnName("password");
+            entity.Property(e => e.UserTypeId).HasColumnName("userTypeId");
+
+            entity.HasOne(d => d.UserType).WithMany(p => p.Users)
+                .HasForeignKey(d => d.UserTypeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Users_UserType");
+        });
+
+        modelBuilder.Entity<UserType>(entity =>
+        {
+            entity.ToTable("UserType");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.UserTypeName)
+                .HasMaxLength(50)
+                .HasColumnName("userTypeName");
         });
 
         OnModelCreatingPartial(modelBuilder);

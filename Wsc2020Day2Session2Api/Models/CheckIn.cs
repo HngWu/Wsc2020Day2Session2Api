@@ -9,5 +9,5 @@ public partial class CheckIn
 
     public string CompetitorId { get; set; } = null!;
 
-    public virtual Competitor Competitor { get; set; } = null!;
+    public virtual User Competitor { get; set; } = null!;
 }
